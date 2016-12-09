@@ -198,6 +198,17 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         locationLabel.text = currentWeather.cityName
         currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
     }
+    
+    @IBAction func chooseLocationPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "LocationVC", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! LocationVC
+        destinationVC._selectedLat = Location.sharedInstance.latitude!
+        destinationVC._selectedLong = Location.sharedInstance.longitude!
+    }
 
 }
 

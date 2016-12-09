@@ -72,7 +72,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" backgroundImage="location-icon-sm"/>
                                         <connections>
-                                            <segue destination="9DH-XC-8Rl" kind="show" identifier="chooseLocation" id="pLK-RZ-3G6"/>
+                                            <action selector="chooseLocationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JYr-gg-FSb"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -188,6 +188,7 @@
                         <outlet property="dateLabel" destination="LTR-e2-mKQ" id="TJL-dh-Agt"/>
                         <outlet property="locationLabel" destination="8iE-v6-kw0" id="Hxi-fl-pHi"/>
                         <outlet property="tableView" destination="IDn-Cn-hCd" id="ClT-We-KhP"/>
+                        <segue destination="9DH-XC-8Rl" kind="show" identifier="LocationVC" id="R0S-FP-ZjC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -222,6 +223,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="9DH-XC-8Rl" eventType="editingDidEndOnExit" id="8HP-f9-3Pa"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter longitude" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8B1-1f-sjy">
                                 <rect key="frame" x="125" y="352" width="125" height="30"/>
@@ -232,6 +236,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="9DH-XC-8Rl" eventType="editingDidEndOnExit" id="tPJ-xx-CXm"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ad-Ik-fTn">
                                 <rect key="frame" x="156" y="244" width="63" height="21"/>
