@@ -19,8 +19,18 @@ class LocationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        latitude.text = "\(_selectedLat!)"
+        longitude.text = "\(_selectedLong!)"
+        
+//        latitude.returnKeyType = UIReturnKeyType.done
+//        longitude.returnKeyType = UIReturnKeyType.done
+        
     }
+    
+    @IBAction func hideKeyboard(_ sender: Any) {
+        latitude.resignFirstResponder()
+        longitude.resignFirstResponder()
+    }    
 
     @IBAction func cancelSelection(_ sender: UIButton) {
         print("Cancel button pressed...")
