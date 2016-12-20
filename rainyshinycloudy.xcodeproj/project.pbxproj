@@ -63,6 +63,37 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9300A9711E0971120059B85A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				932CF1871DEB176A00FB1BF6 /* LaunchScreen.storyboard */,
+				932CF1821DEB176A00FB1BF6 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9300A9721E0971180059B85A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9351B8881DEFA2EB00FA65FA /* CurrentWeather.swift */,
+				933EB5421DF1F67300EAC915 /* Forecast.swift */,
+				933EB5461DF25EFB00EAC915 /* Location.swift */,
+				933EB5441DF21F2F00EAC915 /* WeatherCell.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9300A9731E0971300059B85A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				932CF1851DEB176A00FB1BF6 /* Assets.xcassets */,
+				9351B8861DEF99DA00FA65FA /* Constants.swift */,
+				932CF18A1DEB176A00FB1BF6 /* Info.plist */,
+				933EB5401DF1F0A400EAC915 /* MyConstants.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		932CF1721DEB176A00FB1BF6 = {
 			isa = PBXGroup;
 			children = (
@@ -84,18 +115,10 @@
 		932CF17D1DEB176A00FB1BF6 /* rainyshinycloudy */ = {
 			isa = PBXGroup;
 			children = (
+				9300A9721E0971180059B85A /* Model */,
+				9300A9711E0971120059B85A /* View */,
 				933EB54A1DF2910B00EAC915 /* Controller */,
-				932CF17E1DEB176A00FB1BF6 /* AppDelegate.swift */,
-				932CF1851DEB176A00FB1BF6 /* Assets.xcassets */,
-				9351B8861DEF99DA00FA65FA /* Constants.swift */,
-				933EB5401DF1F0A400EAC915 /* MyConstants.swift */,
-				9351B8881DEFA2EB00FA65FA /* CurrentWeather.swift */,
-				933EB5421DF1F67300EAC915 /* Forecast.swift */,
-				932CF18A1DEB176A00FB1BF6 /* Info.plist */,
-				932CF1871DEB176A00FB1BF6 /* LaunchScreen.storyboard */,
-				933EB5461DF25EFB00EAC915 /* Location.swift */,
-				932CF1821DEB176A00FB1BF6 /* Main.storyboard */,
-				933EB5441DF21F2F00EAC915 /* WeatherCell.swift */,
+				9300A9731E0971300059B85A /* Resources */,
 			);
 			path = rainyshinycloudy;
 			sourceTree = "<group>";
@@ -103,6 +126,7 @@
 		933EB54A1DF2910B00EAC915 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				932CF17E1DEB176A00FB1BF6 /* AppDelegate.swift */,
 				933EB5481DF28AC800EAC915 /* LocationVC.swift */,
 				932CF1801DEB176A00FB1BF6 /* WeatherVC.swift */,
 			);
