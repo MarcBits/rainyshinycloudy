@@ -39,7 +39,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             
             Location.sharedInstance.latitude = self._selectedLat
             
-            print("Selected Lat: \(Location.sharedInstance.latitude!)")
+//            print("Selected Lat: \(Location.sharedInstance.latitude!)")
         }
     }
     
@@ -60,7 +60,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             
             Location.sharedInstance.longitude = self._selectedLong
             
-            print("Selected Long: \(Location.sharedInstance.longitude!)")
+//            print("Selected Long: \(Location.sharedInstance.longitude!)")
         }
     }
     
@@ -84,13 +84,10 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-
+    override func viewWillAppear(_ animated: Bool) {
+        
         self.locationAuthStatus()
         self.constructLocationURLs()
-        
-        print(currentWeatherURL)  // debug
-        print(forecastWeatherURL) // debug
         
         currentWeather = CurrentWeather(currentWeatherURL: currentWeatherURL)
         currentWeather.downloadWeatherDetails {
@@ -98,6 +95,16 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 self.updateMainUI()
             }
         }
+        
+        print(currentWeatherURL)  // debug
+        print(forecastWeatherURL) // debug
+        print("Selected Lat: \(Location.sharedInstance.latitude!)")     // debug
+        print("Selected Long: \(Location.sharedInstance.longitude!)")   // debug
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+
+
     }
 
     func locationAuthStatus() {
@@ -113,7 +120,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 Location.sharedInstance.longitude = currentLocation.coordinate.longitude
             }
             
-            print(Location.sharedInstance.latitude, Location.sharedInstance.longitude) // debug
+//            print(Location.sharedInstance.latitude, Location.sharedInstance.longitude) // debug
 
         } else {
             locationManager.requestWhenInUseAuthorization()

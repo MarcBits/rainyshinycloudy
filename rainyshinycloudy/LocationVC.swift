@@ -120,20 +120,20 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, UIGestureRecogniz
     
     @IBAction func confirmSelection(_ sender: UIButton) {
         
-        print("Selection confirmed \(sender.tag)")
+//        print("Selection confirmed \(sender.tag)")
         
         if let selectedLat = Double(latitude.text!) {
             
             _selectedLat = selectedLat
             
-            print("Latitude: \(_selectedLat!)")
+//            print("Latitude: \(_selectedLat!)")
         }
         
         if let selectedLong = Double(longitude.text!) {
             
             _selectedLong = selectedLong
             
-            print("Longitude: \(_selectedLong!)")
+//            print("Longitude: \(_selectedLong!)")
         }
         
         performSegue(withIdentifier: "WeatherVC", sender: self)
@@ -141,7 +141,7 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, UIGestureRecogniz
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        print("preparing for segue")
+//        print("preparing for segue")
         
         let destinationVC = segue.destination as! WeatherVC
         destinationVC.selectedLat = _selectedLat
